@@ -1,0 +1,2 @@
+# affinity
+Slurm affinity testing
