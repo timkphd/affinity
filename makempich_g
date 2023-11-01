@@ -1,0 +1,49 @@
+SHELL:=/usr/bin/bash
+# For Eagle
+
+recurse:
+	source /nopt/nrel/apps/env.sh ;\
+	module purge                       ; \
+	module use /kfs2/projects/hpcapps/tkaiser/kestrel-tds_0807/affinty/oldmpich; \
+	module load mpich/4.1-gcc   ; \
+	module load gcc/13.1.0        ;\
+	$(MAKE) -f $(firstword $(MAKEFILE_LIST)) both
+
+# To use intelversion of the compilers
+# replace thw two lines above with these
+# 	module load mpich/4.1-intel ; \
+#	module load intel-oneapi ;\
+# You should repleace the same lines in the run script.
+
+both: f.mpichg c.mpichg pp.mpichg
+
+
+#defines USEFAST
+include makefile.include
+
+ifeq ($(USEFAST),yes)
+#OPS=-DUSEFAST
+#EXTRA=getcore.o
+endif
+
+F90=mpif90 
+CC=mpicc -lm
+
+f.mpichg: fhostone.F90 $(EXTRA)
+	$(F90) $(OPS) $(EXTRA) -fopenmp fhostone.F90 -O3 -o f.mpichg
+	rm -f getcore.o
+
+c.mpichg: phostone.c
+	$(CC) $(OPS) -fopenmp phostone.c -O3 -o c.mpichg
+
+pp.mpichg: ppong.c
+	$(CC) $(OPS) $(WES) ppong.c -O3 -o pp.mpichg
+
+clean:
+	rm -rf *o *mod* f.mpichg c.mpichg pp.mpichg
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+SHELL:=/usr/bin/bash
+# For Eagle
+
+recurse:
+	source /nopt/nrel/apps/env.sh ;\
+	module purge                       ; \
+	module load  openmpi/4.1.5-gcc ; \
+	module load gcc/13.1.0    ; \
+	$(MAKE) -f $(firstword $(MAKEFILE_LIST)) both
+
+# To run with intel / Openmpi replace the lines above with these
+#	module load openmpi/4.1.5-intel ; \
+#	module load intel-oneapi   ; \
+# You should also replace the lines in the run script.
+
+both: f.openg c.openg pp.openg
+
+#defines USEFAST
+include makefile.include
+
+ifeq ($(USEFAST),yes)
+#OPS=-DUSEFAST
+#EXTRA=getcore.o
+endif
+
+F90=mpif90 
+CC=mpicc -lm
+
+f.openg: fhostone.F90 $(EXTRA)
+	$(F90) $(OPS) $(EXTRA) -fopenmp fhostone.F90 -O3 -o f.openg
+	rm -f getcore.o
+
+c.openg: phostone.c
+	$(CC) $(OPS) -fopenmp phostone.c -O3 -o c.openg
+
+pp.openg: ppong.c
+	$(CC) $(OPS) $(WES) ppong.c -O3 -o pp.openg
+
+clean:
+	rm -rf *o *mod* f.openg c.openg pp.openg
+
+
+
+
+
+

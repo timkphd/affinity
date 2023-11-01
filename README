@@ -1,0 +1,7 @@
+Collection of source files, makes, and a script to test affinity on Kestrel.
+The tests WORKS and MASK give good affinity the other fail for at least one
+test.
+
+Should work on most slurm based systems after changing the module commands.
+
+

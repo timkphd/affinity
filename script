@@ -1,0 +1,246 @@
+#!/usr/bin/bash
+#SBATCH --job-name="affinity"
+#SBATCH --nodes=2
+#SBATCH --exclusive
+#SBATCH --export=ALL
+#SBATCH --time=04:00:00
+#SBATCH --partition=standard
+
+BASE=`pwd`
+
+#Make a new directory and go there
+STDIR=`pwd`
+mkdir $SLURM_JOB_ID
+cd $SLURM_JOB_ID
+
+#optionally wait between launches
+mywait () { sleep 0; }
+
+#Copy everything 
+printenv > env
+cat $0 > script
+
+cp $BASE/make* .
+cp $BASE/Makefile .
+cp $BASE/fhostone.F90 .
+cp $BASE/phostone.c .
+cp $BASE/cases .
+cp $BASE/post .
+cp $BASE/ppong.c .
+cp $BASE/getcore.c .
+cp $BASE/maskgenerator.py .
+cp $BASE/todo.py .
+cp $BASE/tymer  .
+
+tar -czf recreate.tgz *
+
+
+#Create input for ppong
+./todo.py
+
+#Build our programs
+make all > make.log 2>&1
+make pp  > make.pp 2>&1
+
+#Command line arguments for phostone
+CLA="-i -F -E -t 7"
+export FEXE=f
+export CEXE=c
+
+#LOOPING
+export CRAY_OMP_CHECK_AFFINITY=TRUE
+export nc=`cat cases | wc -l`
+for il in `seq $nc` ; do
+	aline=`cat cases | head -$il | tail -1`
+	ntpn=`echo $aline | awk {'print $1'}`
+	nthrd=`echo $aline | awk {'print $2'}`
+	export OMP_NUM_THREADS=$nthrd
+	for bindit in EMPTY SPREAD THREAD WORKS MASK ; do
+		#export KMP_AFFINITY=scatter
+		export OMP_PROC_BIND=spread
+		export BIND=--cpu-bind=v,${bindit}
+		unset CPUS_TASK
+		if [ $bindit == MASK ] ; then
+		  cores=`expr $ntpn \* $nthrd`
+		  MASK=`./maskgenerator.py $cores $ntpn`
+		  BIND="--cpu-bind=v,mask_cpu:$MASK"
+		fi
+		if [ $bindit == WORKS ] ; then
+		  BIND="--cpu-bind=v"
+		  export CPUS_TASK="--cpus-per-task=$nthrd"
+		fi
+		if [ $bindit == SPREAD ] ; then
+		BIND="--cpu-bind=v"
+		  unset CPUS_TASK
+		  export OMP_PROC_BIND=spread
+		fi
+		if [ $bindit == THREAD ] ; then
+		BIND="--cpu-bind=v"
+		  export CPUS_TASK="--cpus-per-task=$nthrd"
+		  unset OMP_PROC_BIND
+		fi
+		if [ $bindit == EMPTY ] ; then
+		BIND="--cpu-bind=v"
+		  unset CPUS_TASK
+		  unset OMP_PROC_BIND
+		fi
+		echo $ntpn $nthrd >> srunsettings
+		echo $BIND $CPUS_TASK >> srunsettings
+		printenv | egrep "OMP_|KMP_" >> srunsettings
+		echo --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK >> srunsettings
+
+./tymer mytimes PrgEnv-intel
+		module purge
+		module load craype-x86-spr
+		module load intel
+		module load PrgEnv-intel
+
+./tymer mytimes fortran
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.intel $CLA > f.intel.out_${ntpn}_${nthrd}_${bindit} \
+			  2> f.intel.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes c
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.intel $CLA > c.intel.out_${ntpn}_${nthrd}_${bindit} \
+			  2> c.intel.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./pp.intel $CLA > pp.intel.xxx_${ntpn}_${nthrd}_${bindit} \
+							2> pp.intel.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		fi
+
+./tymer mytimes PrgEnv-gnu
+		module purge
+		module load craype-x86-spr
+		module load PrgEnv-gnu
+
+./tymer mytimes fortran
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.gnu $CLA > f.gnu.out_${ntpn}_${nthrd}_${bindit} \
+			  2> f.gnu.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes c
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.gnu $CLA > c.gnu.out_${ntpn}_${nthrd}_${bindit} \
+			  2> c.gnu.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./pp.gnu $CLA > pp.gnu.xxx_${ntpn}_${nthrd}_${bindit} \
+							2> pp.gnu.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		fi
+
+./tymer mytimes PrgEnv-cray
+		module purge
+		module load craype-x86-spr
+		module load PrgEnv-cray
+
+./tymer mytimes fortran
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.cray $CLA > f.cray.out_${ntpn}_${nthrd}_${bindit} \
+			  2> f.cray.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes c
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.cray $CLA > c.cray.out_${ntpn}_${nthrd}_${bindit} \
+			  2> c.cray.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./pp.cray $CLA > pp.cray.xxx_${ntpn}_${nthrd}_${bindit} \
+							2> pp.cray.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		fi
+
+./tymer mytimes intel-oneapi
+		module purge
+		module load intel-oneapi
+		module load libfabric
+
+./tymer mytimes fortran
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.impi $CLA > f.impi.out_${ntpn}_${nthrd}_${bindit} \
+			  2> f.impi.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes c
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.impi $CLA > c.impi.out_${ntpn}_${nthrd}_${bindit} \
+			  2> c.impi.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./pp.impi $CLA > pp.impi.xxx_${ntpn}_${nthrd}_${bindit} \
+							2> pp.impi.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		fi
+:<<SKIP
+		tymer mytimes openmpi/4.1.5-gcc 
+		module purge
+		module load openmpi/4.1.5-gcc 
+		module load gcc
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.openg $CLA > f.openg.out_${ntpn}_${nthrd}_${bindit} \
+				  2> f.openg.info_${ntpn}_${nthrd}_${bindit}
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.openg $CLA > c.openg.out_${ntpn}_${nthrd}_${bindit} \
+				  2> c.openg.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./ppong.openg $CLA > pp.openg.xxx_${ntpn}_${nthrd}_${bindit} 
+								2> pp.openg.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		f1
+
+		tymer mytimes openmpi/4.1.5-intel 
+		module purge
+		module load openmpi/4.1.5-intel
+		module load intel-oneapi
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.open $CLA > f.open.out_${ntpn}_${nthrd}_${bindit} \
+				  2> f.open.info_${ntpn}_${nthrd}_${bindit}
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.open $CLA > c.open.out_${ntpn}_${nthrd}_${bindit} \
+				  2> c.open.info_${ntpn}_${nthrd}_${bindit}
+
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./ppong.open $CLA > pp.open.xxx_${ntpn}_${nthrd}_${bindit} 
+								2> pp.iopen.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		fi
+		tymer mytimes mpich/4.1-intel
+		module purge
+		module load mpich/4.1-intel
+		module load intel-oneapi
+		module load libfabric
+		unset UCX_NET_DEVICES
+		mywait; srun --mpi=pmi2 $BIND  --time=00:03:00 --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.mpich $CLA > f.mpich.out_${ntpn}_${nthrd}_${bindit} \
+				  2> f.mpich.info_${ntpn}_${nthrd}_${bindit}
+		mywait; srun --mpi=pmi2 $BIND  --time=00:03:00 --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.mpich $CLA > c.mpich.out_${ntpn}_${nthrd}_${bindit} \
+				  2> c.mpich.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./ppong.mpich $CLA > pp.mpich.xxx_${ntpn}_${nthrd}_${bindit} 
+								2> pp.mpich.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		fi
+
+		tymer mytimes mpich/4.1-gcc
+		module purge
+		module load mpich/4.1-gcc
+		module load gcc
+		module load libfabric
+		unset UCX_NET_DEVICES
+		mywait; srun --mpi=pmi2 $BIND  --time=00:03:00 --tasks-per-node=$ntpn $CPUS_TASK  ./$FEXE.mpichg $CLA > f.mpichg.out_${ntpn}_${nthrd}_${bindit} \
+				  2> f.mpichg.info_${ntpn}_${nthrd}_${bindit}
+		mywait; srun --mpi=pmi2 $BIND  --time=00:03:00 --tasks-per-node=$ntpn $CPUS_TASK  ./$CEXE.mpichg $CLA > c.mpichg.out_${ntpn}_${nthrd}_${bindit} \
+				  2> c.mpichg.info_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished
+
+		if [[ $nthrd -eq 1 &&  $ntpn -eq 104 && $bindit == WORKS ]] ; then 
+		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./ppong.mpichg $CLA > pp.mpichg.xxx_${ntpn}_${nthrd}_${bindit} 
+								2> pp.mpichg.iii_${ntpn}_${nthrd}_${bindit}
+./tymer mytimes finished ppong
+		fi
+
+SKIP
+		done
+	done
+
+. ./post | sort -n > postit
+. ./post
+getstate postit nope > report
+getstate postit worked >> report
+
+mv $STDIR/slurm-$SLURM_JOB_ID.out .

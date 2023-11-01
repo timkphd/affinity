@@ -1,0 +1,347 @@
+__LMOD_REF_COUNT_PE_LIBSCI_REQUIRED_PRODUCTS=PE_MPICH:1
+__LMOD_REF_COUNT_INCLUDE_PATH_AARCH64=/opt/cray/pe/cce/15.0.0/cce/aarch64/include/craylibs:1
+ASSEMBLER_AARCH64=/opt/cray/pe/cce/15.0.0/binutils/cross/x86_64-aarch64/aarch64-linux-gnu/bin/as
+CRAY_LMOD_MPI=cray-mpich/8.0
+LMOD_FAMILY_CRAYPE_NETWORK_VERSION=false
+LC_ALL=en_US.UTF-8
+SLURM_MEM_PER_CPU=2400
+LS_COLORS=rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+LD_LIBRARY_PATH=/opt/cray/pe/papi/6.0.0.17/lib64:/opt/cray/libfabric/1.15.2.0/lib64:/nopt/slurm/current/lib::
+__LMOD_REF_COUNT_PE_CRAYCLANG_FIXED_PKGCONFIG_PATH=/opt/cray/pe/libsci/22.12.1.1/CRAY/9.0/x86_64/lib/pkgconfig:1;/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0/lib/pkgconfig:1
+CRAY_DSMML_ROOTDIR=/opt/cray/pe/dsmml/0.2.2
+SLURM_NODEID=0
+CRAY_DSMML_DIR=/opt/cray/pe/dsmml/0.2.2/dsmml
+SLURM_TASK_PID=1001723
+__LMOD_REF_COUNT_PATH=/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0/bin:1;/opt/cray/pe/mpich/8.1.23/bin:1;/opt/cray/pe/craype/2.7.19/bin:1;/opt/cray/pe/cce/15.0.0/binutils/x86_64/x86_64-pc-linux-gnu/bin:1;/opt/cray/pe/cce/15.0.0/binutils/cross/x86_64-aarch64/aarch64-linux-gnu/../bin:1;/opt/cray/pe/cce/15.0.0/utils/x86_64/bin:1;/opt/cray/pe/cce/15.0.0/bin:1;/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/bin:1;/opt/cray/pe/perftools/22.12.0/bin:1;/opt/cray/pe/papi/6.0.0.17/bin:1;/opt/cray/libfabric/1.15.2.0/bin:1;/opt/clmgr/sbin:1;/opt/clmgr/bin:1;/opt/sgi/sbin:1;/opt/sgi/bin:1;/nopt/nrel/utils/bin:1;/nopt/slurm/current/bin:1;/usr/share/Modules/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1;/opt/c3/bin:1;/sbin:1;/bin:1;/opt/cray/pe/bin:1
+_ModuleTable002_=ciJdPTEwLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09IlByZ0Vudi1jcmF5Iix9LGNjZT17WyJmbiJdPSIvb3B0L2NyYXkvcGUvbG1vZC9tb2R1bGVmaWxlcy9jb3JlL2NjZS8xNS4wLjAubHVhIixbImZ1bGxOYW1lIl09ImNjZS8xNS4wLjAiLFsibG9hZE9yZGVyIl09NSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0xLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJjY2UiLH0sWyJjcmF5LWRzbW1sIl09e1siZm4iXT0iL29wdC9jcmF5L3BlL2xtb2QvbW9kdWxlZmlsZXMvY29yZS9jcmF5LWRzbW1sLzAuMi4yLmx1YSIsWyJmdWxsTmFtZSJdPSJjcmF5LWRzbW1sLzAuMi4yIixbImxvYWRPcmRlciJdPTcs
+PE_LIBSCI_OMP_REQUIRES=
+PE_MPICH_GTL_DIR_amd_gfx90a=-L/opt/cray/pe/mpich/8.1.23/gtl/lib
+SSH_CONNECTION=10.10.138.247 60512 10.60.1.200 22
+CRAY_LD_LIBRARY_PATH=/opt/cray/pe/libsci/22.12.1.1/CRAY/9.0/x86_64/lib:/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0/lib:/opt/cray/pe/mpich/8.1.23/gtl/lib:/opt/cray/pe/dsmml/0.2.2/dsmml/lib:/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/lib:/opt/cray/pe/cce/15.0.0/cce/x86_64/lib:/opt/cray/pe/perftools/22.12.0/lib64
+SLURM_PRIO_PROCESS=0
+PE_ENV=CRAY
+LINKER_AARCH64=/opt/cray/pe/cce/15.0.0/binutils/cross/x86_64-aarch64/aarch64-linux-gnu/bin/ld
+__LMOD_REF_COUNT_PE_DSMML_PKGCONFIG_LIBS=dsmml:1
+__LMOD_REF_COUNT_PE_FORTRAN_PKGCONFIG_LIBS=mpichf90:1
+LMOD_FAMILY_CRAYPE_CPU=craype-x86-spr
+CRAYPAT_LD_LIBRARY_PATH=/opt/cray/pe/gcc-libs:/opt/cray/gcc-libs:/opt/cray/pe/perftools/22.12.0/lib64
+CRAY_LMOD_COMPILER=crayclang/14.0
+FTN_X86_64=/opt/cray/pe/cce/15.0.0/cce/x86_64
+CRAY_DSMML_PREFIX=/opt/cray/pe/dsmml/0.2.2/dsmml
+PE_PRODUCT_LIST=CRAY_LIBSCI:CRAYPE:CRAYPE_X86_SPR:PERFTOOLS:CRAYPAT
+CRAYPAT_ROOT=/opt/cray/pe/perftools/22.12.0
+LMOD_FAMILY_MPI_VERSION=8.1.23
+MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD
+PE_PERFTOOLS_MPICH_LIBDIR=/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0/lib
+PE_LIBSCI_MODULE_NAME=cray-libsci/22.12.1.1
+PE_MPICH_GTL_DIR_amd_gfx906=-L/opt/cray/pe/mpich/8.1.23/gtl/lib
+LANG=en_US.UTF-8
+PE_LIBSCI_GENCOMPILERS_CRAY_x86_64=9.0
+CRAY_BINUTILS_ROOT_X86_64=/opt/cray/pe/cce/15.0.0/binutils/x86_64/x86_64-pc-linux-gnu/../
+SLURM_SUBMIT_DIR=/nopt/nrel/apps/examples/run
+HISTCONTROL=ignoredups
+PE_MPICH_GTL_DIR_amd_gfx908=-L/opt/cray/pe/mpich/8.1.23/gtl/lib
+PE_DSMML_MODULE_NAME=cray-dsmml
+_ModuleTable008_=L29wdC9jcmF5L3BlL2xtb2QvbW9kdWxlZmlsZXMvY3B1L3g4Ni1zcHIvMS4wIiwiL2V0Yy9zY2wvbW9kdWxlZmlsZXMiLCIvdXNyL3NoYXJlL01vZHVsZXMvbW9kdWxlZmlsZXMiLCIvZXRjL21vZHVsZWZpbGVzIiwiL3Vzci9zaGFyZS9tb2R1bGVmaWxlcyIsIi9ub3B0L25yZWwvYXBwcy9tb2R1bGVzL2RlZmF1bHQvY29tcGlsZXJzX21waSIsIi9ub3B0L25yZWwvYXBwcy9tb2R1bGVzL2RlZmF1bHQvdXRpbGl0aWVzX2xpYnJhcmllcyIsIi9ub3B0L25yZWwvYXBwcy9tb2R1bGVzL2RlZmF1bHQvYXBwbGljYXRpb24iLCIvdXNyL3NoYXJlL21vZHVsZWZpbGVzL0xpbnV4IiwiL3Vzci9zaGFyZS9tb2R1bGVmaWxlcy9Db3JlIiwiL3Vzci9zaGFyZS9sbW9kL2xtb2QvbW9kdWxl
+PE_MPICH_GTL_LIBS_nvidia70=-lmpi_gtl_cuda
+DISPLAY=localhost:10.0
+GUESTFISH_RESTORE=\e[0m
+LMOD_FAMILY_COMPILER_VERSION=15.0.0
+HOSTNAME=x1008c1s0b1n1
+LMOD_SYSTEM_DEFAULT_MODULES=craype-x86-spr:craype-network-ofi:perftools-base:PrgEnv-cray
+OLDPWD=/nopt/nrel/apps/examples/run
+__LMOD_REF_COUNT__LMFILES_=/opt/cray/pe/lmod/modulefiles/craype-targets/default/craype-x86-spr.lua:1;/opt/cray/modulefiles/libfabric/1.15.2.0:1;/opt/cray/pe/lmod/modulefiles/craype-targets/default/craype-network-ofi.lua:1;/opt/cray/pe/lmod/modulefiles/core/perftools-base/22.12.0.lua:1;/opt/cray/pe/lmod/modulefiles/core/cce/15.0.0.lua:1;/opt/cray/pe/lmod/modulefiles/core/craype/2.7.19.lua:1;/opt/cray/pe/lmod/modulefiles/core/cray-dsmml/0.2.2.lua:1;/opt/cray/pe/lmod/modulefiles/comnet/crayclang/14.0/ofi/1.0/cray-mpich/8.1.23.lua:1;/opt/cray/pe/lmod/modulefiles/core/cray-libsci/22.12.1.1.lua:1;/opt/cray/pe/lmod/modulefiles/core/PrgEnv-cray/8.3.3.lua:1
+ENVIRONMENT=BATCH
+PE_LIBSCI_GENCOMPILERS_NVIDIA_x86_64=20.7
+GUESTFISH_INIT=\e[1;34m
+GCC_X86_64=/opt/cray/pe/gcc/10.3.0/snos
+ASSEMBLER_X86_64=/opt/cray/pe/cce/15.0.0/binutils/x86_64/x86_64-pc-linux-gnu/bin/as
+CRAY_PERFTOOLS_VERSION=22.12.0
+_ModuleTable007_=ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJwZXJmdG9vbHMtYmFzZSIsfSx9LG1wYXRoQT17Ii9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL21waS9jcmF5Y2xhbmcvMTQuMC9vZmkvMS4wL2NyYXktbXBpY2gvOC4wIiwiL29wdC9jcmF5L3BlL2xtb2QvbW9kdWxlZmlsZXMvY29tbmV0L2NyYXljbGFuZy8xNC4wL29maS8xLjAiLCIvb3B0L2NyYXkvcGUvbG1vZC9tb2R1bGVmaWxlcy9jb21waWxlci9jcmF5Y2xhbmcvMTQuMCIsIi9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL21peF9jb21waWxlcnMiLCIvb3B0L2NyYXkvcGUvbG1vZC9tb2R1bGVmaWxlcy9wZXJmdG9vbHMvMjIuMTIuMCIsIi9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL25ldC9vZmkvMS4wIiwi
+__LMOD_REF_COUNT_NLSPATH=/opt/cray/pe/cce/15.0.0/cce/x86_64/share/nls/En/%N.cat:1
+LMOD_FAMILY_CRAYPE_NETWORK=craype-network-ofi
+COMPILERRT_PATH_X86_64=/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/lib/clang/15.0.2/lib/linux
+LMOD_FAMILY_CRAYPE_VERSION=2.7.19
+SLURM_PROCID=0
+APP2_STATE=22.12.0
+LINKER_X86_64=/opt/cray/pe/cce/15.0.0/binutils/x86_64/x86_64-pc-linux-gnu/bin/ld
+SLURM_JOB_GID=131364
+PE_LIBSCI_FIXED_PRGENV=CRAYCLANG
+__LMOD_REF_COUNT_LD_LIBRARY_PATH=/opt/cray/pe/papi/6.0.0.17/lib64:1;/opt/cray/libfabric/1.15.2.0/lib64:1;/nopt/slurm/current/lib:1
+__LMOD_REF_COUNT_PKG_CONFIG_PATH=/opt/cray/pe/dsmml/0.2.2/dsmml/lib/pkgconfig:1;/opt/cray/pe/craype/2.7.19/pkg-config:1;/opt/cray/libfabric/1.15.2.0/lib64/pkgconfig:1
+SLURMD_NODENAME=x1008c1s0b1n1
+PE_PKGCONFIG_PRODUCTS=PE_LIBSCI:PE_MPICH:PE_DSMML
+SLURM_JOB_END_TIME=1698788836
+CRAY_MPICH_BASEDIR=/opt/cray/pe/mpich/8.1.23/ofi
+PE_MPICH_GTL_DIR_nvidia80=-L/opt/cray/pe/mpich/8.1.23/gtl/lib
+SSH_AUTH_SOCK=/tmp/ssh-MNdJRVzasu/agent.13336
+_ModuleTable004_=OC4xLjIzLmx1YSIsWyJmdWxsTmFtZSJdPSJjcmF5LW1waWNoLzguMS4yMyIsWyJsb2FkT3JkZXIiXT04LHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTEsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImNyYXktbXBpY2giLH0sY3JheXBlPXtbImZuIl09Ii9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL2NvcmUvY3JheXBlLzIuNy4xOS5sdWEiLFsiZnVsbE5hbWUiXT0iY3JheXBlLzIuNy4xOSIsWyJsb2FkT3JkZXIiXT02LHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTEsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImNyYXlwZSIsfSxbImNyYXlwZS1uZXR3b3JrLW9maSJdPXtbImZuIl09Ii9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL2Ny
+PE_LIBSCI_GENCOMPILERS_GNU_x86_64=9.1
+SLURM_TASKS_PER_NODE=104(x2)
+PAT_BUILD_PAPI_LIBDIR=/opt/cray/pe/papi/6.0.0.17/lib64
+S_COLORS=auto
+C3_RSH=ssh -oConnectTimeout=10 -oForwardX11=no
+PE_MPICH_PKGCONFIG_VARIABLES=PE_MPICH_GTL_DIR_@accelerator@:PE_MPICH_GTL_LIBS_@accelerator@
+PE_MPICH_PKGCONFIG_LIBS=mpich
+which_declare=declare -f
+PE_LEVEL=15.0
+XDG_SESSION_ID=33697
+__LMOD_REF_COUNT_INCLUDE_PATH_X86_64=/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/lib/clang/15.0.2/include:1;/opt/cray/pe/cce/15.0.0/cce/x86_64/include/craylibs:1
+CRAY_DSMML_VER=0.2.2
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+SLURM_NNODES=2
+USER=tkaiser2
+GUESTFISH_PS1=\[\e[1;32m\]><fs>\[\e[0;31m\] 
+CRAY_CXX_IPA_LIBS_AARCH64=/opt/cray/pe/cce/15.0.0/cce/aarch64/lib/libcray-c++-rts.a
+LMOD_FAMILY_PRGENV_VERSION=8.3.3
+CRAY_CPU_TARGET=x86-spr
+PE_LIBSCI_GENCOMPILERS_INTEL_x86_64=19.0
+SLURM_JOB_START_TIME=1698781634
+PE_LIBSCI_VOLATILE_PRGENV=AMD AOCC CRAY GNU INTEL NVIDIA
+__LMOD_REF_COUNT_MODULEPATH=/opt/cray/pe/lmod/modulefiles/mpi/crayclang/14.0/ofi/1.0/cray-mpich/8.0:1;/opt/cray/pe/lmod/modulefiles/comnet/crayclang/14.0/ofi/1.0:1;/opt/cray/pe/lmod/modulefiles/compiler/crayclang/14.0:1;/opt/cray/pe/lmod/modulefiles/mix_compilers:1;/opt/cray/pe/lmod/modulefiles/perftools/22.12.0:1;/opt/cray/pe/lmod/modulefiles/net/ofi/1.0:1;/opt/cray/pe/lmod/modulefiles/cpu/x86-spr/1.0:1;/etc/scl/modulefiles:1;/usr/share/Modules/modulefiles:1;/etc/modulefiles:1;/usr/share/modulefiles:1;/nopt/nrel/apps/modules/default/compilers_mpi:1;/nopt/nrel/apps/modules/default/utilities_libraries:1;/nopt/nrel/apps/modules/default/application:1;/usr/share/modulefiles/Linux:1;/usr/share/modulefiles/Core:1;/usr/share/lmod/lmod/modulefiles/Core:1;/opt/cray/pe/lmod/modulefiles/core:1;/opt/cray/pe/lmod/modulefiles/craype-targets/default:1;/nopt/lmod/modulefiles/core:1;/nopt/lmod/modulefiles/mix_compilers:1;/opt/cray/modulefiles:1
+PKGCONFIG_ENABLED=1
+CRAY_PERFTOOLS_PREFIX=/opt/cray/pe/perftools/22.12.0
+PE_FORTRAN_PKGCONFIG_LIBS=mpichf90
+__LMOD_REF_COUNT_LOADEDMODULES=craype-x86-spr:1;libfabric/1.15.2.0:1;craype-network-ofi:1;perftools-base/22.12.0:1;cce/15.0.0:1;craype/2.7.19:1;cray-dsmml/0.2.2:1;cray-mpich/8.1.23:1;cray-libsci/22.12.1.1:1;PrgEnv-cray/8.3.3:1
+__LMOD_REF_COUNT_CRAY_LD_LIBRARY_PATH=/opt/cray/pe/libsci/22.12.1.1/CRAY/9.0/x86_64/lib:1;/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0/lib:1;/opt/cray/pe/mpich/8.1.23/gtl/lib:1;/opt/cray/pe/dsmml/0.2.2/dsmml/lib:1;/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/lib:1;/opt/cray/pe/cce/15.0.0/cce/x86_64/lib:1;/opt/cray/pe/perftools/22.12.0/lib64:1
+CRAY_CXX_IPA_LIBS=/opt/cray/pe/cce/15.0.0/cce/x86_64/lib/libcray-c++-rts.a
+CRAY_LIBSCI_BASE_DIR=/opt/cray/pe/libsci/22.12.1.1
+PWD=/nopt/nrel/apps/examples/run/491304
+PE_MPICH_GTL_DIR_nvidia70=-L/opt/cray/pe/mpich/8.1.23/gtl/lib
+SLURM_JOB_NODELIST=x1008c1s0b1n1,x1008c1s1b0n0
+HOME=/home/tkaiser2
+SLURM_CLUSTER_NAME=kestrel
+CRAYLIBS_AARCH64=/opt/cray/pe/cce/15.0.0/cce/aarch64/lib
+PELOCAL_PRGENV=true
+PE_LIBSCI_REQUIRED_PRODUCTS=PE_MPICH
+SLURM_NODELIST=x1008c1s0b1n1,x1008c1s1b0n0
+PE_LIBSCI_GENCOMPS_AMD_x86_64=40
+SSH_CLIENT=10.10.138.247 60512 22
+LMOD_VERSION=8.3.1
+PE_MPICH_FORTRAN_PKGCONFIG_LIBS=mpichf90
+PE_LIBSCI_PKGCONFIG_LIBS=libsci_mpi:libsci
+CRAY_LMOD_CPU=x86-spr/1.0
+PE_LIBSCI_OMP_REQUIRES_openmp=_mp
+PE_MPICH_GTL_LIBS_nvidia80=-lmpi_gtl_cuda
+LMOD_FAMILY_CRAYPE_CPU_VERSION=false
+SLURM_JOB_CPUS_PER_NODE=104(x2)
+BASH_ENV=/usr/share/lmod/lmod/init/bash
+CRAYLIBS_X86_64=/opt/cray/pe/cce/15.0.0/cce/x86_64/lib
+__LMOD_REF_COUNT_PE_MPICH_FORTRAN_PKGCONFIG_LIBS=mpichf90:1
+SLURM_TOPOLOGY_ADDR=global.group11.x1008c1s0b1n1
+CRAY_BINUTILS_ROOT=/opt/cray/pe/cce/15.0.0/binutils/x86_64/x86_64-pc-linux-gnu/../
+CRAY_LMOD_NET=ofi/1.0
+__LMOD_REF_COUNT_PE_PKGCONFIG_PRODUCTS=PE_LIBSCI:1;PE_MPICH:1;PE_DSMML:1
+PE_MPICH_MODULE_NAME=cray-mpich
+CRAY_LIBSCI_DIR=/opt/cray/pe/libsci/22.12.1.1
+NLSPATH=/opt/cray/pe/cce/15.0.0/cce/x86_64/share/nls/En/%N.cat
+__LMOD_REF_COUNT_PE_MPICH_GENCOMPILERS_CRAYCLANG=10.0:1
+SLURM_WORKING_CLUSTER=kestrel:10.150.0.23:6817:9984:109
+PE_LIBSCI_VOLATILE_PKGCONFIG_PATH=/opt/cray/pe/libsci/22.12.1.1/@PRGENV@/@PE_LIBSCI_GENCOMPS@/@PE_LIBSCI_TARGET@/lib/pkgconfig
+__LMOD_REF_COUNT_PE_MPICH_FIXED_PRGENV=CRAYCLANG:1
+LIBSCI_VERSION=22.12.1.1
+SLURM_JOB_NAME=affinity
+TMPDIR=/tmp
+PERFTOOLS_VERSION=22.12.0
+CRAY_BINUTILS_VERSION=/opt/cray/pe/cce/15.0.0
+LMOD_sys=Linux
+CRAY_CCE_CLANGSHARE=/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/share
+PE_PKGCONFIG_LIBS=libsci_mpi:libsci:mpich:dsmml
+_ModuleTable010_=ZmF1bHQvdXRpbGl0aWVzX2xpYnJhcmllczovbm9wdC9ucmVsL2FwcHMvbW9kdWxlcy9kZWZhdWx0L2FwcGxpY2F0aW9uOi91c3Ivc2hhcmUvbW9kdWxlZmlsZXMvTGludXg6L3Vzci9zaGFyZS9tb2R1bGVmaWxlcy9Db3JlOi91c3Ivc2hhcmUvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmU6L29wdC9jcmF5L3BlL2xtb2QvbW9kdWxlZmlsZXMvY29yZTovb3B0L2NyYXkvcGUvbG1vZC9tb2R1bGVmaWxlcy9jcmF5cGUtdGFyZ2V0cy9kZWZhdWx0Oi9ub3B0L2xtb2QvbW9kdWxlZmlsZXMvY29yZTovbm9wdC9sbW9kL21vZHVsZWZpbGVzL21peF9jb21waWxlcnM6L29wdC9jcmF5L21vZHVsZWZpbGVzIix9
+SLURM_JOBID=491304
+_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXtbIlByZ0VudiJdPSJQcmdFbnYtY3JheSIsWyJjb21waWxlciJdPSJjY2UiLFsiY3JheXBlIl09ImNyYXlwZSIsWyJjcmF5cGVfY3B1Il09ImNyYXlwZS14ODYtc3ByIixbImNyYXlwZV9uZXR3b3JrIl09ImNyYXlwZS1uZXR3b3JrLW9maSIsWyJtcGkiXT0iY3JheS1tcGljaCIsfSxtVD17WyJQcmdFbnYtY3JheSJdPXtbImZuIl09Ii9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL2NvcmUvUHJnRW52LWNyYXkvOC4zLjMubHVhIixbImZ1bGxOYW1lIl09IlByZ0Vudi1jcmF5LzguMy4zIixbImxvYWRPcmRl
+SLURM_CONF=/var/spool/slurmd/conf-cache/slurm.conf
+LOADEDMODULES=craype-x86-spr:libfabric/1.15.2.0:craype-network-ofi:perftools-base/22.12.0:cce/15.0.0:craype/2.7.19:cray-dsmml/0.2.2:cray-mpich/8.1.23:cray-libsci/22.12.1.1:PrgEnv-cray/8.3.3
+CRAYPE_NETWORK_TARGET=ofi
+INCLUDE_PATH_AARCH64=/opt/cray/pe/cce/15.0.0/cce/aarch64/include/craylibs
+CRAY_PE_USE_CLANG=/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/bin/clang
+__LMOD_REF_COUNT_MANPATH=/opt/cray/pe/libsci/22.12.1.1/man:1;/opt/cray/pe/man/csmlversion:1;/opt/cray/pe/mpich/8.1.23/ofi/man:1;/opt/cray/pe/mpich/8.1.23/man/mpich:1;/opt/cray/pe/dsmml/0.2.2/dsmml/man:1;/opt/cray/pe/craype/2.7.19/man:1;/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/share/man:1;/opt/cray/pe/cce/15.0.0/man:1;/opt/cray/pe/perftools/22.12.0/man:1;/opt/cray/pe/papi/6.0.0.17/share/pdoc/man:1;/opt/cray/libfabric/1.15.2.0/share/man:1;/usr/share/lmod/lmod/share/man:1;/nopt/slurm/current/share:1;/opt/c3/man:1;/opt/clmgr/man:1;/opt/sgi/share/man:1;/opt/clmgr/share/man:1;/opt/clmgr/lib/cm-cli/man:1
+_ModuleTable006_=Y3JheXBlLXg4Ni1zcHIiLH0sbGliZmFicmljPXtbImZuIl09Ii9vcHQvY3JheS9tb2R1bGVmaWxlcy9saWJmYWJyaWMvMS4xNS4yLjAiLFsiZnVsbE5hbWUiXT0ibGliZmFicmljLzEuMTUuMi4wIixbImxvYWRPcmRlciJdPTIscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MSxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0ibGliZmFicmljIix9LFsicGVyZnRvb2xzLWJhc2UiXT17WyJmbiJdPSIvb3B0L2NyYXkvcGUvbG1vZC9tb2R1bGVmaWxlcy9jb3JlL3BlcmZ0b29scy1iYXNlLzIyLjEyLjAubHVhIixbImZ1bGxOYW1lIl09InBlcmZ0b29scy1iYXNlLzIyLjEyLjAiLFsibG9hZE9yZGVyIl09NCxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09
+GCC_AARCH64=/opt/gcc-cross-aarch64/10.3.0/aarch64
+_ModuleTable003_=cHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MSxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0iY3JheS1kc21tbCIsfSxbImNyYXktbGlic2NpIl09e1siZm4iXT0iL29wdC9jcmF5L3BlL2xtb2QvbW9kdWxlZmlsZXMvY29yZS9jcmF5LWxpYnNjaS8yMi4xMi4xLjEubHVhIixbImZ1bGxOYW1lIl09ImNyYXktbGlic2NpLzIyLjEyLjEuMSIsWyJsb2FkT3JkZXIiXT05LHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTEsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImNyYXktbGlic2NpIix9LFsiY3JheS1tcGljaCJdPXtbImZuIl09Ii9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL2NvbW5ldC9jcmF5Y2xhbmcvMTQuMC9vZmkvMS4wL2NyYXktbXBpY2gv
+SLURM_NODE_ALIASES=(null)
+SLURM_JOB_QOS=normal
+LMOD_ROOT=/usr/share/lmod
+SLURM_TOPOLOGY_ADDR_PATTERN=switch.switch.node
+SSH_TTY=/dev/pts/59
+PAT_RT_PERFCTR_DISABLE_COMPONENTS=nvml,cuda
+PE_CRAYCLANG_FIXED_PKGCONFIG_PATH=/opt/cray/pe/libsci/22.12.1.1/CRAY/9.0/x86_64/lib/pkgconfig:/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0/lib/pkgconfig
+PE_LIBSCI_GENCOMPS_INTEL_x86_64=190
+CRAY_MPICH_ROOTDIR=/opt/cray/pe/mpich/8.1.23
+MAIL=/var/spool/mail/tkaiser2
+CRAY_CCE_SHARE=/opt/cray/pe/cce/15.0.0/cce/x86_64/share
+SLURM_CPUS_ON_NODE=104
+CRAY_BINUTILS_BIN_AARCH64=/opt/cray/pe/cce/15.0.0/binutils/cross/x86_64-aarch64/aarch64-linux-gnu/bin
+SLURM_JOB_NUM_NODES=2
+_ModuleTable009_=ZmlsZXMvQ29yZSIsIi9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL2NvcmUiLCIvb3B0L2NyYXkvcGUvbG1vZC9tb2R1bGVmaWxlcy9jcmF5cGUtdGFyZ2V0cy9kZWZhdWx0IiwiL25vcHQvbG1vZC9tb2R1bGVmaWxlcy9jb3JlIiwiL25vcHQvbG1vZC9tb2R1bGVmaWxlcy9taXhfY29tcGlsZXJzIiwiL29wdC9jcmF5L21vZHVsZWZpbGVzIix9LFsic3lzdGVtQmFzZU1QQVRIIl09Ii9ldGMvc2NsL21vZHVsZWZpbGVzOi91c3Ivc2hhcmUvTW9kdWxlcy9tb2R1bGVmaWxlczovZXRjL21vZHVsZWZpbGVzOi91c3Ivc2hhcmUvbW9kdWxlZmlsZXM6L25vcHQvbnJlbC9hcHBzL21vZHVsZXMvZGVmYXVsdC9jb21waWxlcnNfbXBpOi9ub3B0L25yZWwvYXBwcy9tb2R1bGVzL2Rl
+SHELL=/bin/bash
+TERM=xterm-256color
+CRAY_MPICH_VER=8.1.23
+PE_MPICH_GENCOMPILERS_CRAYCLANG=10.0
+CRAY_BINUTILS_ROOT_AARCH64=/opt/cray/pe/cce/15.0.0/binutils/cross/x86_64-aarch64/aarch64-linux-gnu/../
+PE_MPICH_FIXED_PRGENV=CRAYCLANG
+LMOD_FAMILY_PRGENV=PrgEnv-cray
+PE_LIBSCI_GENCOMPILERS_AMD_x86_64=4.0
+SLURM_JOB_UID=131364
+_ModuleTable_Sz_=10
+CRAY_LIBSCI_VERSION=22.12.1.1
+SLURM_JOB_PARTITION=short
+PE_LIBSCI_GENCOMPS_NVIDIA_x86_64=207
+CRAY_CXX_IPA_LIBS_X86_64=/opt/cray/pe/cce/15.0.0/cce/x86_64/lib/libcray-c++-rts.a
+CRAY_BINUTILS_BIN_X86_64=/opt/cray/pe/cce/15.0.0/binutils/x86_64/bin
+USE_PCM_DB=2
+LMOD_FAMILY_COMPILER=cce
+CC_X86_64=/opt/cray/pe/cce/15.0.0/cce/x86_64
+CRAY_DSMML_BASEDIR=/opt/cray/pe/dsmml/0.2.2
+FORTRAN_SYSTEM_MODULE_NAMES=ftn_lib_definitions
+NREL_CLUSTER=kestrel
+SLURM_JOB_USER=tkaiser2
+CRAY_PE_CCE_VARIANT=CC=Clang:FTN=Classic
+PE_LIBSCI_GENCOMPS_AOCC_x86_64=20
+CRAY_CC_VERSION=15.0.0
+SHLVL=2
+LANGUAGE=en_US.UTF-8
+SLURM_SUBMIT_HOST=kl1
+CRAY_LIBSCI_PREFIX_DIR=/opt/cray/pe/libsci/22.12.1.1/CRAY/9.0/x86_64
+SLURM_JOB_ACCOUNT=hpcapps
+CRAY_BINUTILS_BIN=/opt/cray/pe/cce/15.0.0/binutils/x86_64/bin
+MANPATH=/opt/cray/pe/libsci/22.12.1.1/man:/opt/cray/pe/man/csmlversion:/opt/cray/pe/mpich/8.1.23/ofi/man:/opt/cray/pe/mpich/8.1.23/man/mpich:/opt/cray/pe/dsmml/0.2.2/dsmml/man:/opt/cray/pe/craype/2.7.19/man:/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/share/man:/opt/cray/pe/cce/15.0.0/man:/opt/cray/pe/perftools/22.12.0/man:/opt/cray/pe/papi/6.0.0.17/share/pdoc/man:/opt/cray/libfabric/1.15.2.0/share/man:/usr/share/lmod/lmod/share/man:/nopt/slurm/current/share::/opt/c3/man:/opt/clmgr/man:/opt/sgi/share/man:/opt/clmgr/share/man:/opt/clmgr/lib/cm-cli/man
+CRAY_FTN_VERSION=15.0.0
+CRAY_DSMML_VERSION=0.2.2
+MPICH_DIR=/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0
+OSCAR_HOME=/opt/oscar
+MODULEPATH=/opt/cray/pe/lmod/modulefiles/mpi/crayclang/14.0/ofi/1.0/cray-mpich/8.0:/opt/cray/pe/lmod/modulefiles/comnet/crayclang/14.0/ofi/1.0:/opt/cray/pe/lmod/modulefiles/compiler/crayclang/14.0:/opt/cray/pe/lmod/modulefiles/mix_compilers:/opt/cray/pe/lmod/modulefiles/perftools/22.12.0:/opt/cray/pe/lmod/modulefiles/net/ofi/1.0:/opt/cray/pe/lmod/modulefiles/cpu/x86-spr/1.0:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles:/nopt/nrel/apps/modules/default/compilers_mpi:/nopt/nrel/apps/modules/default/utilities_libraries:/nopt/nrel/apps/modules/default/application:/usr/share/modulefiles/Linux:/usr/share/modulefiles/Core:/usr/share/lmod/lmod/modulefiles/Core:/opt/cray/pe/lmod/modulefiles/core:/opt/cray/pe/lmod/modulefiles/craype-targets/default:/nopt/lmod/modulefiles/core:/nopt/lmod/modulefiles/mix_compilers:/opt/cray/modulefiles
+PE_LIBSCI_GENCOMPILERS_AOCC_x86_64=2.0
+CRAY_MPICH_DIR=/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0
+SLURM_GTIDS=0
+LMOD_FAMILY_CRAYPE=craype
+LOGNAME=tkaiser2
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/131364/bus
+CRAY_MPICH_VERSION=8.1.23
+XDG_RUNTIME_DIR=/run/user/131364
+MODULEPATH_modshare=/nopt/nrel/apps/modules/default/compilers_mpi:1:/nopt/nrel/apps/modules/default/application:1:/nopt/nrel/apps/modules/default/utilities_libraries:1:/usr/share/Modules/modulefiles:1:/etc/modulefiles:1:/usr/share/modulefiles:1
+MODULEPATH_ROOT=/usr/share/modulefiles
+PE_MPICH_GTL_LIBS_amd_gfx906=-lmpi_gtl_hsa
+PE_DSMML_PKGCONFIG_LIBS=dsmml
+PE_LIBSCI_PKGCONFIG_VARIABLES=PE_LIBSCI_OMP_REQUIRES_@openmp@:PE_SCI_EXT_LIBPATH:PE_SCI_EXT_LIBNAME
+PE_LIBSCI_GENCOMPS_CRAY_x86_64=90
+PATH=/kfs2/projects/hpcapps/latest/080823_a/opt/linux-rhel8-icelake/gcc-12.2.0/git-2.39.2-apxyl64a7l5zvblyrl5hbfzn5utuw37m/bin:/home/tkaiser2/.local/bin:/home/tkaiser2/bin:/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0/bin:/opt/cray/pe/mpich/8.1.23/bin:/opt/cray/pe/craype/2.7.19/bin:/opt/cray/pe/cce/15.0.0/binutils/x86_64/x86_64-pc-linux-gnu/bin:/opt/cray/pe/cce/15.0.0/binutils/cross/x86_64-aarch64/aarch64-linux-gnu/../bin:/opt/cray/pe/cce/15.0.0/utils/x86_64/bin:/opt/cray/pe/cce/15.0.0/bin:/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/bin:/opt/cray/pe/perftools/22.12.0/bin:/opt/cray/pe/papi/6.0.0.17/bin:/opt/cray/libfabric/1.15.2.0/bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/nopt/nrel/utils/bin:/nopt/slurm/current/bin:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/c3/bin:/sbin:/bin:/opt/cray/pe/bin
+PE_MPICH_GTL_LIBS_amd_gfx908=-lmpi_gtl_hsa
+SLURM_JOB_ID=491304
+__LMOD_REF_COUNT_FORTRAN_SYSTEM_MODULE_NAMES=ftn_lib_definitions:1
+__LMOD_REF_COUNT_PE_PRODUCT_LIST=CRAY_LIBSCI:1;CRAYPE:1;CRAYPE_X86_SPR:1;PERFTOOLS:1;CRAYPAT:1
+_LMFILES_=/opt/cray/pe/lmod/modulefiles/craype-targets/default/craype-x86-spr.lua:/opt/cray/modulefiles/libfabric/1.15.2.0:/opt/cray/pe/lmod/modulefiles/craype-targets/default/craype-network-ofi.lua:/opt/cray/pe/lmod/modulefiles/core/perftools-base/22.12.0.lua:/opt/cray/pe/lmod/modulefiles/core/cce/15.0.0.lua:/opt/cray/pe/lmod/modulefiles/core/craype/2.7.19.lua:/opt/cray/pe/lmod/modulefiles/core/cray-dsmml/0.2.2.lua:/opt/cray/pe/lmod/modulefiles/comnet/crayclang/14.0/ofi/1.0/cray-mpich/8.1.23.lua:/opt/cray/pe/lmod/modulefiles/core/cray-libsci/22.12.1.1.lua:/opt/cray/pe/lmod/modulefiles/core/PrgEnv-cray/8.3.3.lua
+GUESTFISH_OUTPUT=\e[0m
+MODULESHOME=/usr/share/lmod/lmod
+LMOD_SETTARG_FULL_SUPPORT=no
+PKG_CONFIG_PATH=/opt/cray/pe/dsmml/0.2.2/dsmml/lib/pkgconfig:/opt/cray/pe/craype/2.7.19/pkg-config:/opt/cray/libfabric/1.15.2.0/lib64/pkgconfig
+LIBSCI_BASE_DIR=/opt/cray/pe/libsci/22.12.1.1
+HISTSIZE=1000
+PE_MPICH_GTL_LIBS_amd_gfx90a=-lmpi_gtl_hsa
+CRAYPE_DIR=/opt/cray/pe/craype/2.7.19
+LMOD_PKG=/usr/share/lmod/lmod
+__LMOD_REF_COUNT_PE_MPICH_PKGCONFIG_LIBS=mpich:1
+OFFLOAD_INIT=on_start
+__LMOD_REF_COUNT_PE_PKGCONFIG_LIBS=libsci_mpi:1;libsci:1;mpich:1;dsmml:1
+CRAYPE_VERSION=2.7.19
+LOCAL_SCRATCH=/scratch/tkaiser2
+INCLUDE_PATH_X86_64=/opt/cray/pe/cce/15.0.0/cce-clang/x86_64/lib/clang/15.0.2/include:/opt/cray/pe/cce/15.0.0/cce/x86_64/include/craylibs
+LMOD_CMD=/usr/share/lmod/lmod/libexec/lmod
+_ModuleTable005_=YXlwZS10YXJnZXRzL2RlZmF1bHQvY3JheXBlLW5ldHdvcmstb2ZpLmx1YSIsWyJmdWxsTmFtZSJdPSJjcmF5cGUtbmV0d29yay1vZmkiLFsibG9hZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJjcmF5cGUtbmV0d29yay1vZmkiLH0sWyJjcmF5cGUteDg2LXNwciJdPXtbImZuIl09Ii9vcHQvY3JheS9wZS9sbW9kL21vZHVsZWZpbGVzL2NyYXlwZS10YXJnZXRzL2RlZmF1bHQvY3JheXBlLXg4Ni1zcHIubHVhIixbImZ1bGxOYW1lIl09ImNyYXlwZS14ODYtc3ByIixbImxvYWRPcmRlciJdPTEscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0i
+SLURM_LOCALID=0
+CRAY_MPICH_PREFIX=/opt/cray/pe/mpich/8.1.23/ofi/crayclang/10.0
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+CRAYPAT_OPTS_EXECUTABLE=libexec64/opts
+LMOD_DIR=/usr/share/lmod/lmod/libexec
+PE_LIBSCI_GENCOMPS_GNU_x86_64=91
+LMOD_FAMILY_MPI=cray-mpich
+BASH_FUNC_which%%=() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
+}
+BASH_FUNC__module_raw%%=() {  unset _mlshdbg;
+ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then
+ case "$-" in 
+ *v*x*)
+ set +vx;
+ _mlshdbg='vx'
+ ;;
+ *v*)
+ set +v;
+ _mlshdbg='v'
+ ;;
+ *x*)
+ set +x;
+ _mlshdbg='x'
+ ;;
+ *)
+ _mlshdbg=''
+ ;;
+ esac;
+ fi;
+ unset _mlre _mlIFS;
+ if [ -n "${IFS+x}" ]; then
+ _mlIFS=$IFS;
+ fi;
+ IFS=' ';
+ for _mlv in ${MODULES_RUN_QUARANTINE:-};
+ do
+ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then
+ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then
+ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";
+ fi;
+ _mlrv="MODULES_RUNENV_${_mlv}";
+ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";
+ fi;
+ done;
+ if [ -n "${_mlre:-}" ]; then
+ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;
+ else
+ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;
+ fi;
+ _mlstatus=$?;
+ if [ -n "${_mlIFS+x}" ]; then
+ IFS=$_mlIFS;
+ else
+ unset IFS;
+ fi;
+ unset _mlre _mlv _mlrv _mlIFS;
+ if [ -n "${_mlshdbg:-}" ]; then
+ set -$_mlshdbg;
+ fi;
+ unset _mlshdbg;
+ return $_mlstatus
+}
+BASH_FUNC_switchml%%=() {  typeset swfound=1;
+ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then
+ typeset swname='main';
+ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then
+ typeset swfound=0;
+ unset MODULES_USE_COMPAT_VERSION;
+ fi;
+ else
+ typeset swname='compatibility';
+ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then
+ typeset swfound=0;
+ MODULES_USE_COMPAT_VERSION=1;
+ export MODULES_USE_COMPAT_VERSION;
+ fi;
+ fi;
+ if [ $swfound -eq 0 ]; then
+ echo "Switching to Modules $swname version";
+ source /usr/share/Modules/init/bash;
+ else
+ echo "Cannot switch to Modules $swname version, command not found";
+ return 1;
+ fi
+}
+BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then
+ eval "module $@";
+ else
+ /usr/bin/scl "$@";
+ fi
+}
+BASH_FUNC_ml%%=() {  eval $($LMOD_DIR/ml_cmd "$@")
+}
+_=/usr/bin/printenv
