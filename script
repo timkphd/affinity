@@ -165,7 +165,6 @@ for il in `seq $nc` ; do
 							2> pp.impi.iii_${ntpn}_${nthrd}_${bindit}
 ./tymer mytimes finished ppong
 		fi
-:<<SKIP
 		tymer mytimes openmpi/4.1.5-gcc 
 		module purge
 		module load openmpi/4.1.5-gcc 
@@ -180,7 +179,8 @@ for il in `seq $nc` ; do
 		mywait; srun --mpi=pmi2 $BIND  --tasks-per-node=$ntpn $CPUS_TASK  ./ppong.openg $CLA > pp.openg.xxx_${ntpn}_${nthrd}_${bindit} 
 								2> pp.openg.iii_${ntpn}_${nthrd}_${bindit}
 ./tymer mytimes finished ppong
-		f1
+		fi
+:<<SKIP
 
 		tymer mytimes openmpi/4.1.5-intel 
 		module purge

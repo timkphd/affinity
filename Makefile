@@ -1,5 +1,6 @@
 #all : impi  cray  gnu  intel open mpich openg mpichg dmod pp
-all :  impi  cray  gnu  intel open mpich openg mpichg dmod
+#all :  impi  cray  gnu  intel open mpich openg mpichg dmod
+all :  impi  cray  gnu  intel      mpich openg mpichg dmod
 
 impi: makeimpi
 	make -f makeimpi 
