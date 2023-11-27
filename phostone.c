@@ -301,6 +301,7 @@ int main(int argc, char **argv, char *envp[])
   if (myid == 0 && full == 2)
     {
       printf("MPI VERSION %s\n", version);
+      printf("%s\n",__VERSION__);
       printf("task    thread             node name  first task    # on node  "
              "core\n");
     }

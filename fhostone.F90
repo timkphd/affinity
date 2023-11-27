@@ -129,6 +129,7 @@ end module
 
 
 program hello
+   use iso_fortran_env
    use mpi , only : MPI_MAX_PROCESSOR_NAME, &
                     MPI_MAX_LIBRARY_VERSION_STRING, &
                     MPI_COMM_WORLD, MPI_INTEGER, &
@@ -210,6 +211,7 @@ program hello
 
    if (myid == 0 .and. full == 2) then
       write (*, '("MPI Version:",a)') trim(version)
+      write(*,*)compiler_version()
       write (*, '(a)') "task    thread             node name  first task    # on node  core"
    end if
    call node_color(mycol)
